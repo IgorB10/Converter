@@ -1,0 +1,131 @@
+ext.versions = [
+    code                         : 7,
+    name                         : '1.0.0',
+
+    minSdk                       : 21,
+    targetSdk                    : 27,
+    compileSdk                   : 27,
+    buildTools                   : '27.0.2',
+    multidex                     : '1.0.1',
+
+    kotlin                       : '1.2.30',
+    ktx                          : '0.2',
+    fresco                       : '1.8.1',
+
+    fabric                       : '1.25.1',
+
+    supportLibs                  : '27.1.0',
+    constraintLayout             : '1.0.2',
+
+    androidGradlePlugin          : '3.0.1',
+    dexcountPlugin               : '0.6.1',
+    versionsGradlePlugin         : '0.13.0',
+
+    dagger                       : '2.13',
+    coroutines                   : '0.22.2',
+
+    butterknife                  : '8.8.1',
+    rxbinding                    : '2.1.1',
+
+    rxJava2                      : '2.1.10',
+    rxJava2Android               : '2.0.2',
+    okHttp                       : '3.4.1',
+    retrofit                     : '2.3.0',
+    gson                         : '2.7',
+
+    playService                  : '11.8.0',
+
+    eventbus                     : '3.1.1',
+    eventbusProcessor            : '3.0.1',
+
+    icepick                      : '3.2.0',
+    timber                       : '4.6.1',
+
+    crashlytics                  : '2.8.0@aar',
+
+    espresso                     : '2.2.1',
+    androidDevMetricsGradlePlugin: '0.6',
+
+    junit                        : '4.12',
+    robolectric                  : '3.1.2',
+    assertJ                      : '2.5.0',
+    equalsVerifier               : '1.7.5',
+    mockito                      : '1.10.19',
+    supportTestRunner            : '0.5',
+]
+
+ext.gradlePlugins = [
+    android          : "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+    kotlin           : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+    androidDevMetrics: "com.frogermcs.androiddevmetrics:androiddevmetrics-plugin:$versions.androidDevMetricsGradlePlugin",
+    dexcount         : "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$versions.dexcountPlugin",
+    versions         : "com.github.ben-manes:gradle-versions-plugin:$versions.versionsGradlePlugin",
+    fabric           : "io.fabric.tools:gradle:$versions.fabric",
+]
+
+ext.libraries = [
+    stdlib                  : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+    coroutines              : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines",
+    ktx                     : "androidx.core:core-ktx:$versions.ktx",
+    multidex                : "com.android.support:multidex:$versions.multidex",
+
+    supportAnnotations      : "com.android.support:support-annotations:$versions.supportLibs",
+    supportAppCompat        : "com.android.support:appcompat-v7:$versions.supportLibs",
+    supportDesign           : "com.android.support:design:$versions.supportLibs",
+    supportRecyclerView     : "com.android.support:recyclerview-v7:$versions.supportLibs",
+    supportCardView         : "com.android.support:cardview-v7:$versions.supportLibs",
+
+    fresco                  : "com.facebook.fresco:fresco:$versions.fresco",
+    frescoImagepipeline     : "com.facebook.fresco:imagepipeline-okhttp3:$versions.fresco",
+
+    butterknife             : "com.jakewharton:butterknife:$versions.butterknife",
+    rxbinding               : "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding",
+    butterknifeCompiler     : "com.jakewharton:butterknife-compiler:$versions.butterknife",
+
+    constraintLayout        : "com.android.support.constraint:constraint-layout:$versions.constraintLayout",
+
+    rxJava2                 : "io.reactivex.rxjava2:rxjava:$versions.rxJava2",
+    rxJava2Android          : "io.reactivex.rxjava2:rxandroid:$versions.rxJava2Android",
+
+    archPaging              : "android.arch.paging:runtime:$versions.archPaging",
+    archLifecycle           : "android.arch.lifecycle:extensions:$versions.archLifecycle",
+    archCompiler            : "android.arch.lifecycle:compiler:$versions.archLifecycle",
+    room                    : "android.arch.persistence.room:runtime:$versions.room",
+    roomCompiler            : "android.arch.persistence.room:compiler:$versions.room",
+
+    dagger                  : "com.google.dagger:dagger:$versions.dagger",
+    daggerAndroid           : "com.google.dagger:dagger-android:$versions.dagger",
+    daggerSupport           : "com.google.dagger:dagger-android-support:$versions.dagger",
+    daggerCompiler          : "com.google.dagger:dagger-compiler:$versions.dagger",
+    daggerProcessor         : "com.google.dagger:dagger-android-processor:$versions.dagger",
+
+    okHttp                  : "com.squareup.okhttp3:okhttp:$versions.okHttp",
+    okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
+    retrofit                : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+    retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+    retrofitRxJavaAdapter   : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+    gson                    : "com.google.code.gson:gson:$versions.gson",
+
+    crashlytics             : "com.crashlytics.sdk.android:crashlytics:$versions.crashlytics",
+
+    eventbus                : "org.greenrobot:eventbus:$versions.eventbus",
+    eventbusProcessor       : "org.greenrobot:eventbus-annotation-processor:$versions.eventbusProcessor",
+
+    icepick                : "frankiesardo:icepick:$versions.icepick",
+    icepickProcessor       : "frankiesardo:icepick-processor:$versions.icepick",
+
+    timber                 : "com.jakewharton.timber:timber:$versions.timber",
+    stetho                 : "com.facebook.stetho:stetho:$versions.stetho",
+
+    // Test dependencies
+    junit                   : "junit:junit:$versions.junit",
+    robolectric             : "org.robolectric:robolectric:$versions.robolectric",
+    assertJ                 : "org.assertj:assertj-core:$versions.assertJ",
+    equalsVerifier          : "nl.jqno.equalsverifier:equalsverifier:$versions.equalsVerifier",
+    okHttpMockWebServer     : "com.squareup.okhttp3:mockwebserver:$versions.okHttp",
+    mockitoCore             : "org.mockito:mockito-core:$versions.mockito",
+    supportTestRunner       : "com.android.support.test:runner:$versions.supportTestRunner",
+    supportTestRules        : "com.android.support.test:rules:$versions.supportTestRunner",
+    espressoCore            : "com.android.support.test.espresso:espresso-core:$versions.espresso",
+    espressoContrib         : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+]

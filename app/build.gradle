@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+
+repositories {
+  maven {url "https://clojars.org/repo/"}
+}
+android {
+  compileSdkVersion versions.compileSdk
+  buildToolsVersion versions.buildTools
+  defaultConfig {
+    applicationId "com.igor.bykov.converter"
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.targetSdk
+    versionCode versions.code
+    versionName versions.name
+    vectorDrawables.useSupportLibrary = true
+    multiDexEnabled true
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    buildConfigField "String", "BASE_URL", "\"https://revolut.duckdns.org\""
+
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+kapt {
+  arguments {
+    arg('eventBusIndex', 'com.igor.bykov.converter.ConverterEventBusIndex')
+  }
+}
+
+dependencies {
+  implementation libraries.multidex
+  implementation libraries.stdlib
+
+  implementation libraries.supportAnnotations
+  implementation libraries.supportAppCompat
+  implementation libraries.supportDesign
+  implementation libraries.supportRecyclerView
+  implementation libraries.supportCardView
+  implementation libraries.constraintLayout
+
+  implementation libraries.dagger
+  implementation libraries.daggerAndroid
+  implementation libraries.daggerSupport
+  kapt libraries.daggerCompiler
+  kapt libraries.daggerProcessor
+
+  implementation libraries.rxJava2
+  implementation libraries.rxJava2Android
+
+  implementation libraries.okHttp
+  implementation libraries.retrofit
+  implementation libraries.retrofitGsonConverter
+  implementation libraries.retrofitRxJavaAdapter
+  implementation libraries.okHttpLoggingInterceptor
+  implementation libraries.gson
+
+  implementation libraries.rxbinding
+  implementation libraries.fresco
+  implementation libraries.frescoImagepipeline
+
+
+  implementation libraries.butterknife
+  kapt libraries.butterknifeCompiler
+
+  implementation(libraries.crashlytics) {
+    transitive = true
+  }
+
+  implementation libraries.icepick
+  kapt libraries.icepickProcessor
+
+  implementation libraries.ktx
+
+  implementation libraries.eventbus
+  kapt libraries.eventbusProcessor
+
+  implementation libraries.timber
+
+  testImplementation libraries.junit
+  testImplementation libraries.robolectric
+  testImplementation libraries.assertJ
+  testImplementation libraries.equalsVerifier
+  testImplementation libraries.okHttpMockWebServer
+  testImplementation libraries.mockitoCore
+
+  androidTestImplementation libraries.supportTestRunner
+  androidTestImplementation libraries.supportTestRules
+  androidTestImplementation libraries.espressoCore
+  androidTestImplementation(libraries.espressoContrib) {
+    exclude module: 'support-annotations'
+    exclude module: 'recyclerview-v7'
+    exclude module: 'support-v4'
+  }
+  androidTestImplementation libraries.okHttpMockWebServer
+}
