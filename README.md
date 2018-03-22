@@ -2,5 +2,5 @@
 
 Real time currency converter
 
-[![Demo](https://im2.ezgif.com/tmp/ezgif-2-634ca2922a.gif)]
+[![Demo](https://media.giphy.com/media/1xlrbW0KjaSSHwbTgj/giphy.gif)]
 
